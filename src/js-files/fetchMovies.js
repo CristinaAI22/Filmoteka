@@ -29,7 +29,6 @@ export const handlePagination = () => {
 // functions
 
 function goToPage(e) {
-  console.log(btnsFor);
   const btn = e.target;
 
   if (btn.dataset.page) {
@@ -61,7 +60,6 @@ function goToPage(e) {
       findMovieToPage();
     }
   }
-  console.log(currentPage);
 }
 
 // exports
@@ -73,7 +71,6 @@ export const fetchAllMovies = async () => {
   }
   try {
     const moviesGallery = getElement('.gallery');
-
     const url = `${BASE_URL}/trending/all/day?page=${currentPage}&api_key=${API_KEY}`;
     const resp = await axios.get(url);
     const data = resp.data;
@@ -109,7 +106,6 @@ export const findMovie = async () => {
     e.preventDefault();
     showLoader();
     btnsFor = 'search';
-    currentPageExport = 1;
     currentPage = 1;
     searchValue = searchInput.value;
     try {
@@ -125,6 +121,7 @@ export const findMovie = async () => {
       const totalResults = data.total_results;
       const totalPages = data.total_pages;
       const movies = data.results;
+      console.log(movies);
       const movieTypes = await getMoviesType();
       setupGallery(movies, movieTypes, moviesGallery);
       if (totalResults === 0) {
