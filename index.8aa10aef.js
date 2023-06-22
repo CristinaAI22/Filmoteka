@@ -13,5 +13,5 @@
                                   web-share"
                                   allowfullscreen
                                 >
-                                </iframe>`}),y.addEventListener("click",()=>{L(),a.close()}),window.addEventListener("click",e=>{e.target==a&&(L(),a.close())}),document.addEventListener("keydown",e=>{e.preventDefault(),console.log(e),27==e.keyCode&&(L(),a.close())})}();
-//# sourceMappingURL=index.16c8f90b.js.map
+                                </iframe>`}),y.addEventListener("click",()=>{L(),a.close()}),window.addEventListener("click",e=>{e.target==a&&(L(),a.close())}),a.addEventListener("keydown",e=>{e.preventDefault(),console.log(e),27==e.keyCode&&(L(),a.close())})}();
+//# sourceMappingURL=index.8aa10aef.js.map
